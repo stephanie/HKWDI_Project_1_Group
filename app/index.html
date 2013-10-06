@@ -7,15 +7,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <meta name="description" content="">
+    <meta name="description" content="Online Tic Tac Toe">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+       <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 </head>
-  <body>
+<body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,7 +27,28 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <h1>Hello</h1>
+  <header>
+    <h1>TIC TAC TOE</h1>
+  </header>
+  <div id="gameboard">
+    <div class="row">
+      <div class="cell" id="cell1" onclick="next_move_no_conflicts(1)"></div>
+      <div class="cell" id="cell2" onclick="next_move_no_conflicts(2)"></div>
+      <div class="cell" id="cell3" onclick="next_move_no_conflicts(3)"></div>
+    </div>
+    <div class="row">
+      <div class="cell" id="cell4" onclick="next_move_no_conflicts(4)"></div>
+      <div class="cell" id="cell5" onclick="next_move_no_conflicts(5)"></div>
+      <div class="cell" id="cell6" onclick="next_move_no_conflicts(6)"></div>
+    </div>
+    <div class="row">
+      <div class="cell" id="cell7" onclick="next_move_no_conflicts(7)"></div>
+      <div class="cell" id="cell8" onclick="next_move_no_conflicts(8)"></div>
+      <div class="cell" id="cell9" onclick="next_move_no_conflicts(9)"></div>
+    </div>
+  </div>
+  <footer>
+  </footer>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
 
