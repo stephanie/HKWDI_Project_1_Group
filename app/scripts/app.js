@@ -12,6 +12,10 @@ angular.module('tickeyApp', ['LocalStorageModule', 'firebase'])
           templateUrl: 'views/how.html',
           controller: 'HowCtrl'
      })
+          .when('/scoreboard', {
+          templateUrl: 'views/scoreboard.html',
+          controller: 'ScoreboardCtrl'
+     })
           .when('/', {
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'

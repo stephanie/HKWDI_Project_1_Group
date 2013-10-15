@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tickeyApp')
-.controller('GameboardCtrl', function ($scope, $rootScope, $timeout, localStorageService, angularFire) {
+.controller('GameboardCtrl', function ($scope, $rootScope, $timeout, $location, localStorageService, angularFire) {
 
 var ref = new Firebase('https://hkwdi1.firebaseio.com/leaderBoard');
 var p = angularFire(ref, $scope,"leaderData");
@@ -11,10 +11,10 @@ p.then(function(){
   console.log($scope.leaderData);
 })
 
-$scope.leaderData = {person: 
-{name: 'Steph', 
-value: 'Thanks Deepak!'}
-};
+// $scope.leaderData = {person: 
+// {name: 'Steph', 
+// value: 'Thanks Deepak!'}
+// };
 
 $scope.timeleft = 60;
 $scope.stoptimer;
@@ -43,9 +43,11 @@ $scope.start = function() {
       if ($scope.timeleft > 0) {
           $scope.timeleft = $scope.timeleft - 1;
           $scope.start();
+      } else if ($scope.timeleft == 0) {
+        $location.path('/scoreboard');
       } else {
           $timeout.cancel($scope.stoptimer);
-      }
+      } 
     }, 1000);
   }
 

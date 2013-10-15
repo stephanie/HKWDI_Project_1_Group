@@ -22,8 +22,8 @@ h1 {
 }
 .cell {
     float: left;
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     text-align: center;
     text-transform: uppercase;
     font: 120px 'Quicksand';
@@ -41,9 +41,9 @@ h1 {
     clear: both;
 }
 #gameboard {
-    margin: 30px auto;
-    width: 605px;
-    height: 605px;
+    margin: 33px auto;
+    width: 485px;
+    height: 485px;
     overflow: visible;
 }
 #cell1, #cell4, #cell7, #cell2, #cell5, #cell8  {
@@ -75,16 +75,16 @@ h1 {
   float: right;
 }
 #gamepanel {
-  font: 18px 'Quicksand';
+  font: 12px 'Quicksand';
   clear: both;
   position: relative;
-  width: 222px;
-  height: 80px;
+  width: 208px;
+  height: 62px;
   margin: 0 auto;
   padding: 25px;
-  background-color: rgb(232,232,232);
+  background-color: rgb(238,238,238);
   top: 30px;
-  color: #333333;
+  color: #323232;
 }
 #countdown {
   position: relative;
@@ -102,19 +102,19 @@ h1 {
 */}
 
  #xScore, #tieScore, #timeLeft {
-    font: 70px 'Quicksand';
+    font: 60px 'Quicksand';
     font-weight: 300;
-    margin-top: -20px;
+    margin-top: -19px;
     }
  #playerPoints, #countdownText {
-    margin-top: -80px;
+    margin-top: -70px;
 }
-#countdownText {
+/*#countdownText {
   position: fixed;
   top: 765px;
   right: 248px;
 }
-
+*/
 #startButton {
   position: relative;
   float: left;
@@ -132,9 +132,16 @@ h1 {
   padding-right: 60px;
 }
 
-#howtext {
+#howtext, #scoreboardHeader {
   font: 20px 'Quicksand';
   text-align: center;
   width: 500px;
   margin: 30px auto 0;
+}
+
+#scoreboardHeader {
+  font-weight: 500;
+  border-bottom: 1px solid #626262;
+  width: 300px;
+  text-transform: uppercase;
 }
