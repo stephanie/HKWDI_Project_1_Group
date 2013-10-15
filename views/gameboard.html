@@ -1,7 +1,7 @@
 <div id="gamepage">
   <div id="gameboard">
       <div class="row">
-          <div id="cell1" class="cell lt {{cells[0]}}" data-ng-click="handleClick(1)" sublcd="">{{cells[0]}}</div>
+          <div id="cell1" class="cell lt {{cells[0]}}" data-ng-click="handleClick(1)">{{cells[0]}}</div>
           <div id="cell2" class="cell mt {{cells[1]}}" data-ng-click="handleClick(2)">{{cells[1]}}</div>
           <div id="cell3" class="cell rt {{cells[2]}}" data-ng-click="handleClick(3)">{{cells[2]}}</div>
       </div>
@@ -19,11 +19,11 @@
       </div>
   <div id="gamepanel">
     <div id="scoreboard"> 
-          <p id="xScore">{{ xScore }}</p>
+          <p id="xScore" data-change-color="">{{ xScore }}</p>
           <p id="playerPoints">points</p>
     </div>  
     <div id="countdown"> 
-          <p id="timeLeft">{{ timeleft }}</p>
+          <p id="timeLeft" data-change-color="">{{ timeleft }}</p>
           <p id="countdownText">seconds</p>
     </div>  
 <!--         <div data-ng-click="start()">
