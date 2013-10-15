@@ -1,0 +1,43 @@
+<div id="gamepage">
+  <div id="gameboard">
+      <div class="row">
+          <div id="cell1" class="cell lt {{cells[0]}}" data-ng-click="handleClick(1)">{{cells[0]}}</div>
+          <div id="cell2" class="cell mt {{cells[1]}}" data-ng-click="handleClick(2)">{{cells[1]}}</div>
+          <div id="cell3" class="cell rt {{cells[2]}}" data-ng-click="handleClick(3)">{{cells[2]}}</div>
+      </div>
+
+      <div class="row">
+          <div id="cell4" class="cell lc {{cells[3]}}" data-ng-click="handleClick(4)">{{cells[3]}}</div>
+          <div id="cell5" class="cell mc {{cells[4]}}" data-ng-click="handleClick(5)">{{cells[4]}}</div>
+          <div id="cell6" class="cell rc {{cells[5]}}" data-ng-click="handleClick(6)">{{cells[5]}}</div>
+      </div>
+
+      <div class="row">
+          <div id="cell7" class="cell lb {{cells[6]}}" data-ng-click="handleClick(7)">{{cells[6]}}</div>
+          <div id="cell8" class="cell mb {{cells[7]}}" data-ng-click="handleClick(8)">{{cells[7]}}</div>
+          <div id="cell9" class="cell rb {{cells[8]}}" data-ng-click="handleClick(9)">{{cells[8]}}</div>
+      </div>
+  <div id="gamepanel">
+    <div id="scoreboard">
+        <p class="playerX">Player X: 
+          <div id="xScore">{{ xScore }}</div>
+        </p>
+        <p class="playerO">Player O: 
+          <div id="oScore">{{ oScore }}</div>
+        </p>
+        <p class="tie">Ties: 
+          <div id="tieScore">{{ tieScore }}</div>
+        </p>
+    </div>
+    <div id="countdownBox">  
+      Time left: 
+        <p id="countdown"><span class="o">{{ timeleft }}</span></p>
+        <div data-ng-click="start()">
+            <img src="../images/91d9c549.startbutton.png" alt="startButton" id="startButton">
+        </div>
+        <div data-ng-click="stop()">
+            <img src="../images/b26e0bf7.stopbutton.png" alt="stopButton" id="stopButton">
+        </div>
+    </div> 
+  </div>
+</div></div>
