@@ -6,17 +6,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Tickey</title>
     <meta name="description" content="Online Tic Tac Toe">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-       <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body data-ng-app="tickeyApp">
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -27,30 +27,36 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-  <header>
-    <h1>TIC TAC TOE</h1>
-  </header>
-  <div id="gameboard">
-    <div class="row">
-      <div class="cell" id="cell1" onclick="next_move_no_conflicts(1)"></div>
-      <div class="cell" id="cell2" onclick="next_move_no_conflicts(2)"></div>
-      <div class="cell" id="cell3" onclick="next_move_no_conflicts(3)"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell4" onclick="next_move_no_conflicts(4)"></div>
-      <div class="cell" id="cell5" onclick="next_move_no_conflicts(5)"></div>
-      <div class="cell" id="cell6" onclick="next_move_no_conflicts(6)"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell7" onclick="next_move_no_conflicts(7)"></div>
-      <div class="cell" id="cell8" onclick="next_move_no_conflicts(8)"></div>
-      <div class="cell" id="cell9" onclick="next_move_no_conflicts(9)"></div>
-    </div>
-  </div>
-  <footer>
-  </footer>
+    <header>
+        <h1 data-change-color=""><span class='o'>T</span>ickety<span class='o'>T</span>ackety</h1>
+        <a href="/#/">
+            <img src="../images/homebutton.png" alt="homebutton" id="homebutton">
+        </a>
+        <div data-ng-hide="howButton">
+            <a href="/#/how">
+                <img src="../images/howbutton.png" alt="howbutton" id="howbutton">
+            </a>
+        </div>
+        <div data-ng-hide="smallPlaybutton">
+            <a href="/#/gameboard">
+                <img src="../images/playbutton.png" alt="smallPlaybutton" id="smallPlaybutton">
+            </a>
+        </div>
+    </header>
+    <div data-ng-view></div>
+</body>
+
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-localstorage/angular-local-storage.js"></script>
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/gameboard.js"></script>
+        <script src="scripts/controllers/how.js"></script>
+        <script src="scripts/directives/change_color.js"></script>
 
         <!-- endbuild -->
 </body>

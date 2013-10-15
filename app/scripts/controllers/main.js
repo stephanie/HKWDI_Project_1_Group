@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('TickeyApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('tickeyApp')
+.controller('MainCtrl', function ($scope, $rootScope, localStorageService) {
+    
+    $scope.name = "Tickety";
+    $rootScope.howButton = false;
+    $rootScope.smallPlaybutton = true;
+
   });
