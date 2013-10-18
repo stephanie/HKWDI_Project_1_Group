@@ -1,3 +1,27 @@
-<a href="/#/gameboard">
- 		<img src="../images/438b6e00.playbutton.png" alt="playbutton" id="playbutton">
- </a>
+<!-- <p id=nameRequest>Hello there, what's your user name?
+</br> 
+Pick something the world has never seen!
+</br> 
+</br>
+</br>
+<input type="text" name="userName">
+<input type="submit">
+</p> -->
+
+<div data-ng-click="clicked()">
+    <div data-ng-hide="clicked">
+        <img src="../images/438b6e00.playbutton.png" alt="playbutton" id="playbutton">
+    </div>
+</div>
+<div id="gamemodebuttons">
+    <div data-ng-show="clicked">
+        <a href="/#/gameboard">
+            <img src="../images/f4a48121.computerbutton.png" alt="computerbutton" id="computerbutton">
+        </a>
+    </div>
+    <div data-ng-show="clicked">
+        <a href="/#/match_online_player">
+            <img src="../images/0060b78e.onlineplayerbutton.png" alt="onlineplayerbutton" id="onlineplayerbutton">
+        </a>
+    </div>
+</div>
