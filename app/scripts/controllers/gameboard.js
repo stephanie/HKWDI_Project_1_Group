@@ -82,7 +82,7 @@ angular.module('tickeyApp')
                 }
                 if ($scope.turnNum == 9) {
                     alert("Tie!");
-                    $scope.addTieGamePoint();
+                    $scope.addTieGamePoint;
                     $scope.restartGame();
                 } else {
                     $scope.swapSymbol();
@@ -90,7 +90,7 @@ angular.module('tickeyApp')
                         $scope.selectRandomSquare($scope.currentSymbol);
                         if ($scope.isWinning($scope.currentSymbol)) {
                             alert($scope.currentSymbol + " wins!");
-                            $scope.addGamePoint();
+                            $scope.addGamePoint;
                             $scope.restartGame();
                         } else {
                             $scope.swapSymbol();
@@ -166,7 +166,8 @@ angular.module('tickeyApp')
 
         $scope.restartGame = function() {
             $scope.currentSymbol = "x";
-            $scope.turnNum = 0;subl
+            $scope.turnNum = 0;
+            $scope.playermessage = ("");
             $scope.clearBoard();
         }
 

@@ -1,4 +1,9 @@
 <div id="gamepage">
+
+    <div id="multiplayerMessage">
+        {{ playermessage }}
+    </div>
+
     <div id="gameboard">
         <div class="row">
             <div id="cell1" class="cell lt {{gameboard[0]}}" data-ng-click="handleClick(0)">{{gameboard[0]}}</div>
@@ -18,7 +23,6 @@
             <div id="cell9" class="cell rb {{gameboard[8]}}" data-ng-click="handleClick(8)">{{gameboard[8]}}</div>
         </div>
 
-        {{ playermessage }}
         <div id="gamepanel">
             <div id="scoreboard">
                 <p id="xScore" data-change-color="">{{ xScore }}</p>
