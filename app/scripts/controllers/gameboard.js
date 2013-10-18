@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tickeyApp')
-    .controller('GameboardCtrl', function($scope, $rootScope, $timeout, $location, localStorageService, angularFire) {
+    .controller('GameboardCtrl', function($scope, $rootScope, $timeout, $location, angularFire) {
 
         var ref = new Firebase('https://tictactoe-leaderboard.firebaseio.com/leaderData');
         $scope.leaderData = {};
@@ -76,13 +76,13 @@ angular.module('tickeyApp')
                 $scope.makeNextMove(location, $scope.currentSymbol);
                 if ($scope.isWinning($scope.currentSymbol)) {
                     alert($scope.currentSymbol + " wins!");
-                    $scope.addGamePoint();
+                    // $scope.addGamePoint();
                     $scope.restartGame();
                     return;
                 }
                 if ($scope.turnNum == 9) {
                     alert("Tie!");
-                    $scope.addTieGamePoint;
+                    // $scope.addTieGamePoint;
                     $scope.restartGame();
                 } else {
                     $scope.swapSymbol();
@@ -90,7 +90,7 @@ angular.module('tickeyApp')
                         $scope.selectRandomSquare($scope.currentSymbol);
                         if ($scope.isWinning($scope.currentSymbol)) {
                             alert($scope.currentSymbol + " wins!");
-                            $scope.addGamePoint;
+                            // $scope.addGamePoint;
                             $scope.restartGame();
                         } else {
                             $scope.swapSymbol();
@@ -181,18 +181,18 @@ angular.module('tickeyApp')
             $scope.makeNextMove(randomNumber, currentPlayer);
         }
 
-        $scope.addGamePoint = function() {
-            if ($scope.currentSymbol == "x") {
-                $scope.xScore = $scope.xScore + 1;
-                localStorageService.add('xScore', $scope.xScore);
-            } else {
-                $scope.oScore = $scope.oScore + 1;;
-            }
-        }
+    //     $scope.addGamePoint = function() {
+    //         if ($scope.currentSymbol == "x") {
+    //             $scope.xScore = $scope.xScore + 1;
+    //             localStorageService.add('xScore', $scope.xScore);
+    //         } else {
+    //             $scope.oScore = $scope.oScore + 1;;
+    //         }
+    //     }
 
-        $scope.addTieGamePoint = function() {
-            $scope.tieScore = $scope.tieScore + 1;
-        }
-    });
+    //     $scope.addTieGamePoint = function() {
+    //         $scope.tieScore = $scope.tieScore + 1;
+    //     }
+    // });
 
 // $timeout(function alert($scope.currentSymbol + " wins!")[, 1000]);
