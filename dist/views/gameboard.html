@@ -1,0 +1,43 @@
+<div id="gamepage">
+
+    <div id="multiplayerMessage">
+        {{ playermessage }}
+    </div>
+
+    <div id="gameboard">
+        <div class="row">
+            <div id="cell1" class="cell lt {{gameboard[0]}}" data-ng-click="handleClick(0)">{{gameboard[0]}}</div>
+            <div id="cell2" class="cell mt {{gameboard[1]}}" data-ng-click="handleClick(1)">{{gameboard[1]}}</div>
+            <div id="cell3" class="cell rt {{gameboard[2]}}" data-ng-click="handleClick(2)">{{gameboard[2]}}</div>
+        </div>
+
+        <div class="row">
+            <div id="cell4" class="cell lc {{gameboard[3]}}" data-ng-click="handleClick(3)">{{gameboard[3]}}</div>
+            <div id="cell5" class="cell mc {{gameboard[4]}}" data-ng-click="handleClick(4)">{{gameboard[4]}}</div>
+            <div id="cell6" class="cell rc {{gameboard[5]}}" data-ng-click="handleClick(5)">{{gameboard[5]}}</div>
+        </div>
+
+        <div class="row">
+            <div id="cell7" class="cell lb {{gameboard[6]}}" data-ng-click="handleClick(6)">{{gameboard[6]}}</div>
+            <div id="cell8" class="cell mb {{gameboard[7]}}" data-ng-click="handleClick(7)">{{gameboard[7]}}</div>
+            <div id="cell9" class="cell rb {{gameboard[8]}}" data-ng-click="handleClick(8)">{{gameboard[8]}}</div>
+        </div>
+
+<!--         <div id="gamepanel">
+            <div id="scoreboard">
+                <p id="xScore" data-change-color="">{{ xScore }}</p>
+                <p id="playerPoints">points</p>
+            </div>
+            <div id="countdown" data-ng-click="stop()">
+                <p id="timeLeft" data-change-color="">{{ timeleft }}</p>
+                <p id="countdownText">seconds</p>
+            </div> -->
+            <!--         <div data-ng-click="start()">
+            <img src="../images/91d9c549.startbutton.png" alt="startButton" id="startButton">
+        </div>
+        <div data-ng-click="stop()">
+            <img src="../images/b26e0bf7.stopbutton.png" alt="stopButton" id="stopButton">
+        </div>
+ -->
+        </div>
+    </div>
