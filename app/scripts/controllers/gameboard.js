@@ -3,17 +3,26 @@
 angular.module('tickeyApp')
 .controller('GameboardCtrl', function ($scope, $rootScope, $timeout, $location, localStorageService, angularFire) {
 
-var ref = new Firebase('https://hkwdi1.firebaseio.com/leaderBoard');
-var p = angularFire(ref, $scope,"leaderData");
+var ref = new Firebase('https://tictactoe-leaderboard.firebaseio.com/leaderData');
 $scope.leaderData = {};
+var p = angularFire (ref, $scope,"leaderData");
 
-p.then(function(){
-  console.log($scope.leaderData);
-})
+// p.then(function(){
+//    console.log($scope.leaderData);
+// })
 
-// $scope.leaderData = {person: 
-// {name: 'Steph', 
-// value: 'Thanks Deepak!'}
+// $scope.leaderData =
+//    {Name: 'Steph', 
+//    Points: '9'};
+
+// $scope.addWinToLeaderboard = function() {
+//   if ($scope.userName) {
+//     if ($scope.leaderData.name.hasOwnProperty($scope.userName)) {
+//       $scope.leaderData.name[$scope.userName] == $scope.xScore;
+//      } else {
+//         $scope.leaderData.name[$scope.userName]=0;
+//       }
+//     }
 // };
 
 $scope.timeleft = 60;
@@ -36,7 +45,7 @@ $scope.tieScore = parseInt(localStorageService.get('storedTieScore'));
 if ($scope.tieScore == undefined);
 $scope.tieScore = 0;
 
-$scope.cells = ["", "", "", "", "", "", "", "", ""];
+$scope.gameboard = ["", "", "", "", "", "", "", "", ""];
 
 $scope.start = function() {
    $scope.stoptimer = $timeout(function() {
@@ -50,16 +59,15 @@ $scope.start = function() {
       } 
     }, 1000);
   }
-
-if ($scope.turnNum == 1);
-$scope.start();
  
-$scope.stop = function() {
+$scope.stop = function(value) {
     $timeout.cancel($scope.stoptimer);
   }
 
 $scope.turn = function() {
       $scope.turnNum += 1;
+  if ($scope.turnNum === 1 && $scope.timeleft == 60) {
+  $scope.start();}
 }
 
 $scope.handleClick = function (location) {
@@ -69,7 +77,9 @@ $scope.handleClick = function (location) {
       alert($scope.currentSymbol + " wins!");
       $scope.addGamePoint();
       $scope.restartGame();
-    } else if ($scope.turnNum == 9) {
+      return;
+    } 
+      if ($scope.turnNum == 9) {
       alert("Tie!");
       $scope.addTieGamePoint();
       $scope.restartGame();
@@ -93,7 +103,7 @@ $scope.handleClick = function (location) {
 }
 
 $scope.makeNextMove = function (location, symbol) {  
-  $scope.cells[location - 1] = symbol;
+  $scope.gameboard[location] = symbol;
   $scope.turn();
 }
 
@@ -106,7 +116,7 @@ $scope.swapSymbol = function() {
 }
 
 $scope.notOccupied = function (location) {
-  var result = ($scope.cells[location - 1] == "");
+  var result = ($scope.gameboard[location] == "");
   return result;
 }
 
@@ -129,28 +139,28 @@ $scope.isWinning = function (currentPlayer) {
 }
 
 $scope.isSameSymbolsIn = function (first_cell_id, second_cell_id, third_cell_id, currentPlayer) {
-  var first_comparison = $scope.cells[first_cell_id] == currentPlayer;
-  var second_comparison = $scope.cells[second_cell_id] == currentPlayer;
-  var third_comparison = $scope.cells[third_cell_id] == currentPlayer;
+  var first_comparison = $scope.gameboard[first_cell_id] == currentPlayer;
+  var second_comparison = $scope.gameboard[second_cell_id] == currentPlayer;
+  var third_comparison = $scope.gameboard[third_cell_id] == currentPlayer;
 
   var result = first_comparison && second_comparison && third_comparison;
   return result;
 }
 
 $scope.isDiagonalSameSymbols = function (currentPlayer) {
-  var firstDiagonalCheck = ($scope.cells[0] == currentPlayer &&
-    $scope.cells[4] == currentPlayer &&
-    $scope.cells[8] == currentPlayer);
-  var secondDiagonalCheck = ($scope.cells[2] == currentPlayer &&
-    $scope.cells[4] == currentPlayer &&
-    $scope.cells[6] == currentPlayer);
+  var firstDiagonalCheck = ($scope.gameboard[0] == currentPlayer &&
+    $scope.gameboard[4] == currentPlayer &&
+    $scope.gameboard[8] == currentPlayer);
+  var secondDiagonalCheck = ($scope.gameboard[2] == currentPlayer &&
+    $scope.gameboard[4] == currentPlayer &&
+    $scope.gameboard[6] == currentPlayer);
   return firstDiagonalCheck || secondDiagonalCheck;
 }
 
 $scope.clearBoard = function() {
   for ( var i=0 ; i <= 8; i++ ) {
  
-    $scope.cells[i] = "";
+    $scope.gameboard[i] = "";
   }
 }
 

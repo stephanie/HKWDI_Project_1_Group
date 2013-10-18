@@ -2,52 +2,58 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tickey</title>
-    <meta name="description" content="Online Tic Tac Toe">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<!--[if gt IE 8]><!-->
+    <html class="no-js">
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tickey</title>
+        <meta name="description" content="Online Tic Tac Toe">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-</head>
-<body data-ng-app="tickeyApp">
+    </head>
 
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <body data-ng-app="tickeyApp">
 
-    <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+        <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <header>
-        <h1><span class='o'>T</span>ickety<span class='o'>T</span>ackety</h1>
-        <a href="/#/">
-            <img src="../images/homebutton.png" alt="homebutton" id="homebutton">
-        </a>
-        <div data-ng-hide="howButton">
-            <a href="/#/how">
-                <img src="../images/howbutton.png" alt="howbutton" id="howbutton">
+        <!--[if lt IE 9]>
+          <script src="bower_components/es5-shim/es5-shim.js"></script>
+          <script src="bower_components/json3/lib/json3.min.js"></script>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <header>
+            <h1>
+                <span class='o'>T</span>ickety
+                <span class='o'>T</span>ackety</h1>
+            <a href="/#/">
+                <img src="../images/homebutton.png" alt="homebutton" id="homebutton">
             </a>
-        </div>
-        <div data-ng-hide="smallPlaybutton">
-            <a href="/#/gameboard">
-                <img src="../images/playbutton.png" alt="smallPlaybutton" id="smallPlaybutton">
-            </a>
-        </div>
-    </header>
-    <div data-ng-view></div>
-</body>
+            <div data-ng-hide="howButton">
+                <a href="/#/how">
+                    <img src="../images/howbutton.png" alt="howbutton" id="howbutton">
+                </a>
+            </div>
+            <div data-ng-hide="smallPlaybutton">
+                <a href="/#/gameboard">
+                    <img src="../images/playbutton.png" alt="smallPlaybutton" id="smallPlaybutton">
+                </a>
+            </div>
+        </header>
+        <div data-ng-view></div>
+    </body>
 
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-localstorage/angular-local-storage.js"></script>
         <script src="https://cdn.firebase.com/v0/firebase.js"></script>
@@ -58,8 +64,9 @@
         <script src="scripts/controllers/how.js"></script>
         <script src="scripts/directives/change_color.js"></script>
         <script src="scripts/controllers/scoreboard.js"></script>
+        <script src="scripts/controllers/multiplayer_gameboard.js"></script>
+        <script src="scripts/controllers/match_online_player.js"></script>
+    <!-- endbuild -->
+    </body>
 
-
-        <!-- endbuild -->
-</body>
 </html>
