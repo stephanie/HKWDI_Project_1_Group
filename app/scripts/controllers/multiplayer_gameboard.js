@@ -37,12 +37,12 @@ angular.module('tickeyApp')
         $scope.promise.then(function() {
             $scope.gameboard = [];
             if ($scope.gameboard.length == 0 && $scope.mySymbol == 'x') {
-                $scope.playermessage = "You are X. Make the first move!";
+                $scope.playermessage = "You are X. You make the first move!";
                 $scope.myTurn = true;
                 console.log("X working.. X's turn:" + $scope.myTurn);
                 console.log("The other player's symbol is " + $scope.otherPlayerSymbol)
             } else {
-                $scope.playermessage = "You are O. Make the next move.";
+                $scope.playermessage = "You are O. You make the second move.";
                 $scope.myTurn = false;
                 console.log("O working.. O's turn:" + $scope.myTurn);
                 console.log("The other player's symbol is " + $scope.otherPlayerSymbol)
@@ -58,6 +58,7 @@ angular.module('tickeyApp')
                         if ($scope.isLosing($scope.otherPlayerSymbol)) {
                         console.log("The other player won")
                         $scope.playermessage = ("You lost!")
+                        $scope.restartGame();
                             // redirect to match player if play again
 
                         } 
@@ -91,9 +92,14 @@ angular.module('tickeyApp')
                     if ($scope.isWinning($scope.mySymbol)) {
                         console.log("Registered yes to winning");
                         $scope.playermessage = ("You won!");
-                        $scope.restartGame();
+                        window.setTimeout(function() {
+                            $scope.restartGame();
+                        }, 100);
                     } else if ($scope.turnNum == 8) {
-                        scope.playermessage = ("Tie!");
+                        $scope.playermessage = ("Tie!");
+                        window.setTimeout(function() {
+                            $scope.restartGame();
+                        }, 100);
                     } else {
                         $scope.myTurn = false;
                     }
